@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Blog</title>
+    <link rel="stylesheet" href="./stylesheets/style.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <header>
+            <nav>
+                <a href="/">Home</a>
+            <!--{{#if loggedIn}}-->
+                <a href="/dashboard">Dashboard</a>
+                <button id="logout" class="btn-no-style">Logout</button>
+            <!--{{else}}-->
+                <a href="/login">Login</a>
+            <!--{{/if}}-->
+            </nav>
+            <h1>
+                The Tech Blog
+            </h1>
+        </header>
+        <main>
+            <article class="post">
+                <div class="title">
+                    <h2>{{title}}</h2>
+                    <small>
+                    Posted by {{user.username}} on {{format_date created_at}}
+                    </small>
+                </div>
+                <div class="body">
+                    {{post_text}}
+                </div>
+            </article>
+            <article class="comments">
+                <div class="title"></div>
+                <div class="body">
+                  <div class="text">
+                    {{comment_text}}
+                  </div>
+                  <p>
+                    &ndash;{{user.username}}, {{format_date created_at}}
+                  </p>
+                </div>
+                <div class="body">
+                    <div class="text">
+                      {{comment_text}}
+                    </div>
+                    <p>
+                      &ndash;{{user.username}}, {{format_date created_at}}
+                    </p>
+                  </div>
+            </article>
+        </main>
+    </div>
+<!--{{#if loggedIn}}
+    <script src="/javascript/logout.js"></script>
+{{/if}}-->
+</body>
+
+</html>
