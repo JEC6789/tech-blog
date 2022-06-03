@@ -132,7 +132,7 @@ a.post {
     width: 100%;
 }
 
-main a:not(main article a) {
+main a:not(main article a):last-child {
     background-color: var(--secondary-color);
     border: none;
     border-radius: 8px;
