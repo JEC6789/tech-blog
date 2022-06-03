@@ -103,6 +103,7 @@ form input {
     border: 1px solid var(--tertiary-color);
     border-radius: 2px;
     height: 36px;
+    padding: 0 10px;
 }
 
 form button {
@@ -113,6 +114,10 @@ form button {
     font-size: 1em;
     padding: 8px;
     width: 100%;
+}
+
+form button:not(:last-child) {
+    margin-bottom: 8px;
 }
 
 a.post {

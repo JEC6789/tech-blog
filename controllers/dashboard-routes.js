@@ -38,6 +38,10 @@ router.get("/", withAuth, (req, res) => {
     });
 });
 
+router.get("/new", withAuth, (req, res) => {
+    res.render("new-post", { loggedIn: true });
+});
+
 router.get("/edit/:id", withAuth, (req, res) => {
     Post.findOne({
         where: {

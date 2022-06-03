@@ -25,41 +25,26 @@
             </h1>
         </header>
         <main>
-            <article class="post">
+            <article class="new-post">
                 <div class="title">
-                    <a href="/post/{{{post.id}}}">
-                        <h2>{{title}}</h2>
-                    </a>
-                    <small>
-                    Posted by {{user.username}} on {{format_date created_at}}
-                    </small>
+                    <h2>
+                        Create New Post
+                    </h2>
                 </div>
                 <div class="body">
-                    {{post_text}}
-                </div>
-            </article>
-            <!--{{#if loggedIn}}-->
-            <article class="comment-creator">
-                <div class="title"></div>
-                <div class="body">
-                    <form class="comment-form">
+                    <form class="new-post-form">
                         <div>
-                            <label for="comment-body">Comment</label>
-                            <textarea name="comment-body"></textarea>
+                            <span>Title</span>
+                            <input name="post-title" type="text" />
                         </div>
-            
                         <div>
-                            <button type="submit">Submit</button>
+                            <span>Content</span>
+                            <textarea name="post-content"></textarea>
                         </div>
+                        <button type="submit">Create</button>
                     </form>
                 </div>
             </article>
-            <!--{{/if}}
-            
-            {{> comments post.comments}}
-            {{#if loggedIn}}
-            <script src="/javascript/comment.js"></script>
-            {{/if}}-->
         </main>
     </div>
 <!--{{#if loggedIn}}
