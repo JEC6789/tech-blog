@@ -15,7 +15,7 @@
                 <a href="/">Home</a>
             <!--{{#if loggedIn}}-->
                 <a href="/dashboard">Dashboard</a>
-                <button id="logout" class="btn-no-style">Logout</button>
+                <button id="logout">Logout</button>
             <!--{{else}}-->
                 <a href="/login">Login</a>
             <!--{{/if}}-->
@@ -27,7 +27,9 @@
         <main>
             <article class="post">
                 <div class="title">
-                    <h2>{{title}}</h2>
+                    <a href="/post/{{{post.id}}}">
+                        <h2>{{title}}</h2>
+                    </a>
                     <small>
                     Posted by {{user.username}} on {{format_date created_at}}
                     </small>
@@ -36,25 +38,28 @@
                     {{post_text}}
                 </div>
             </article>
-            <article class="comments">
+            <!--{{#if loggedIn}}-->
+            <article class="comment-creator">
                 <div class="title"></div>
                 <div class="body">
-                  <div class="text">
-                    {{comment_text}}
-                  </div>
-                  <p>
-                    &ndash;{{user.username}}, {{format_date created_at}}
-                  </p>
+                    <form class="comment-form">
+                        <div>
+                            <label for="comment-body">Comment</label>
+                            <textarea name="comment-body"></textarea>
+                        </div>
+            
+                        <div>
+                            <button type="submit">Submit</button>
+                        </div>
+                    </form>
                 </div>
-                <div class="body">
-                    <div class="text">
-                      {{comment_text}}
-                    </div>
-                    <p>
-                      &ndash;{{user.username}}, {{format_date created_at}}
-                    </p>
-                  </div>
             </article>
+            <!--{{/if}}
+            
+            {{> comments post.comments}}
+            {{#if loggedIn}}
+            <script src="/javascript/comment.js"></script>
+            {{/if}}-->
         </main>
     </div>
 <!--{{#if loggedIn}}

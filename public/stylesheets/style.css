@@ -2,6 +2,7 @@
     --primary-color: #d9ead3;
     --secondary-color: #231010;
     --tertiary-color: #a7a7a7;
+    --quaternary-color: #666666;
 }
 
 * {
@@ -12,6 +13,14 @@
 body {
     background-color: var(--primary-color);
     font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+button:hover {
+    cursor: pointer;
 }
 
 header {
@@ -32,7 +41,6 @@ nav a, nav button {
     border: none;
     color: var(--primary-color);
     font-size: large;
-    text-decoration: none;
 }
 
 h1 {
@@ -44,6 +52,10 @@ h1 {
 }
 
 main {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    min-height: calc(100vh - 164.8px);
     padding: 12px 32px;
 }
 
@@ -63,6 +75,10 @@ article {
     padding: 12px 16px;
 }
 
+.title a {
+    color: var(--tertiary-color);
+}
+
 .body {
     background-color: var(--primary-color);
     padding: 12px 16px;
@@ -71,4 +87,57 @@ article {
 h2 {
     font-size: 1.25em;
     width: fit-content;
+}
+
+form {
+    font-size: 1.25em;
+}
+
+form div {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 8px;
+}
+
+form input {
+    border: 1px solid var(--tertiary-color);
+    border-radius: 2px;
+    height: 36px;
+}
+
+form button {
+    background-color: var(--quaternary-color);
+    border: none;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 1em;
+    padding: 8px;
+    width: 100%;
+}
+
+a.post {
+    background-color: var(--quaternary-color);
+    color: #fff;
+    border-radius: 8px;
+    font-size: 1.25em;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    padding: 8px;
+    width: 100%;
+}
+
+main a:not(main article a) {
+    background-color: var(--secondary-color);
+    border: none;
+    border-radius: 8px;
+    color: var(--primary-color);
+    font-size: 1.5em;
+    padding: 12px 16px;
+    position: fixed;
+    bottom: 20px;
+}
+
+textarea {
+    min-height: 100px;
 }
