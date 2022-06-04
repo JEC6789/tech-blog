@@ -2,7 +2,6 @@
 * server actually runs: ✔
 * comment get: ✔
 * comment post: ✔
-* comment delete id: ❌*
 * post get: ✔
 * post get id: ✔
 * post post: ✔†
@@ -22,7 +21,5 @@
 * home get login: ✔
 * home get signup: ✔
 * home get post id: ✔
-
-*`/api/comments/:id` always returns 404 w/o body; it's like the route doesn't even exist
 
 †entering something too long for the post content throws an error; appears to be a limitation of SQL
