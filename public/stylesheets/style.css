@@ -145,4 +145,5 @@ main a:not(main article a):last-child {
 
 textarea {
     min-height: 100px;
+    padding: 0 3px;
 }
